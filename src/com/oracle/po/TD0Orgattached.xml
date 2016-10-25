@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+ <map><!-- 防止数据列名誉实体类属性名不一致 -->
+     <property property="id" column="id"></property>
+     <property property="orgid" column="orgid"></property>
+     <property property="orgname" column="orgname"></property>
+     <property property="orgno" column="orgno"></property>
+     <property property="orgcode" column="orgcode"></property>
+     <property property="onworkernum" column="onworkernum"></property>
+     <property property="supervisornum" column="supervisornum"></property>
+     <property property="zbbnum" column="zbbnum"></property>
+     <property property="ifpublicmanage" column="ifpublicmanage"></property>
+     <property property="retirenum" column="retirenum"></property>
+     <property property="officebuildarea" column="officebuildarea"></property>
+     <property property="buildingownership" column="buildingownership"></property>
+     <property property="officebuildingarea" column="officebuildingarea"></property>
+     <property property="businessdivcount" column="businessdivcount"></property>
+     <property property="fundivcount" column="fundivcount"></property>
+     <property property="orgcount" column="orgcount"></property>
+     <property property="equ3count" column="equ3count"></property>
+     <property property="equ2count" column="equ2count"></property>
+     <property property="equ1count" column="equ1count"></property>
+     <property property="buscount" column="buscount"></property>
+     <property property="rapidtestvehiclecount" column="rapidtestvehiclecount"></property>
+     <property property="motorcount" column="motorcount"></property>
+     <property property="cameracount" column="cameracount"></property>
+     <property property="videocount" column="videocount"></property>
+     <property property="copycatnum" column="copycatnum"></property>
+     <property property="computernum" column="computernum"></property>
+     <property property="notepadnum" column="notepadnum"></property>
+     <property property="servercount" column="servercount"></property>
+     <property property="pbxcount" column="pbxcount"></property>
+     <property property="faxcount" column="faxcount"></property>
+     <property property="ohpcount" column="ohpcount"></property>
+     <property property="yearly" column="yearly"></property>
+     <property property="vrcount" column="vrcount"></property>
+  </map>
+  <select id="selectTD0TD0Orgattached"><!-- 在登录时，对数据库中的用户进行查询 -->
+    select * from T_D0_Orgattached
+  </select>
+  <select id="selectTD0TD0Orgattachedbyorgid">
+    select * from T_D0_Orgattached where orgid=?
+  </select>
+  <insert id="creatOrgattached">
+    insert into T_D0_Orgattached (id,orgid,orgname,orgno,orgcode,onworkernum,supervisornum,zbbnum,ifpublicmanage,retirenum,officebuildarea,buildingownership,officebuildingarea,businessdivcount,fundivcount,orgcount,equ3count,equ2count,equ1count,buscount,rapidtestvehiclecount,motorcount,cameracount,videocount,copycatnum,computernum,notepadnum,servercount,pbxcount,faxcount,ohpcount,vrcount) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+  </insert>
+ </mapping>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+ <map><!-- 防止数据列名誉实体类属性名不一致 -->
+     <property property="id" column="id"></property>
+     <property property="orgid" column="orgid"></property>
+     <property property="orgno" column="orgno"></property>
+     <property property="divcode" column="divcode"></property>
+     <property property="divnamecode" column="divnamecode"></property>
+     <property property="divname" column="divname"></property>
+     <property property="ifsub" column="ifsub"></property>
+     <property property="dutytel" column="dutytel"></property>
+     <property property="fax" column="fax"></property>
+     <property property="divroomno" column="divroomno"></property>
+     <property property="exetype" column="exetype"></property>
+ </map>
+ <select id="section">
+  select * from T_D0_Section where id=?
+ </select>
+ <select id="selectTD0Section"><!-- 在登录时，对数据库中的用户进行查询 -->
+   select * from T_D0_Section t1 left join T_D0_Organization t2 on t1.orgid = t2.id where t2.id=?
+   and t1.divname=? order by t1.orgid
+ </select>
+  <select id="selectTD0Section1"><!-- 在登录时，对数据库中的用户进行查询 -->
+   select * from T_D0_Section where orgid=?    
+ </select>
+ <insert id="addTD0Section4">
+   insert into T_D0_Section (id,orgid,divcode,divname,ifsub,dutytel,fax,divroomno) values(?,?,?,?,?,?,?,?) 
+ </insert>
+ 
+ <update id="upateTD0Section">
+   update T_D0_Section set divcode=?,divname=?,ifsub=?,dutytel=?,fax=?,divroomno=? where id=?
+ </update>
+ 
+ <delete id="deletesection">
+  delete from  T_D0_Section where id=?
+ </delete>
+
+</mapping>

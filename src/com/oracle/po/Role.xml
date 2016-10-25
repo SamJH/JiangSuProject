@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+ <map><!-- 防止数据列名誉实体类属性名不一致 -->
+     <property property="roleId" column="roleId"></property>
+     <property property="roleName" column="roleName"></property>
+ </map>
+ <select id="selectRole"><!-- 在登录时，对数据库中的用户进行查询 -->
+  select * from role where roleId in (select roleId from user_role where usersId=?)   
+ </select>
+
+</mapping>

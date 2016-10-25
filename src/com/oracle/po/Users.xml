@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+ <map><!-- 防止数据列名誉实体类属性名不一致 -->
+     <property property="usersId" column="usersId"></property>
+     <property property="usersName" column="usersName"></property>
+     <property property="passWord" column="passWord"></property>
+ </map>
+ <select id="selectUsers"><!-- 在登录时，对数据库中的用户进行查询 -->
+   select * from users where usersId=?     
+ </select>
+ <insert id="addUsers">
+   insert into users values(?,?,?)
+ </insert>
+ <update id="updateUsers">
+   update users set usersPassword = ? where usersId = ?
+ </update>
+ <delete id="deleteUsers">
+   delete from users where usersId = ?
+ </delete>
+
+</mapping>

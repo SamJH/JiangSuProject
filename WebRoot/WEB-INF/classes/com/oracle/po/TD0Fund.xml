@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+ <map><!-- 防止数据列名誉实体类属性名不一致 -->
+     <property property="id" column="id"></property>
+     <property property="orgid" column="orgid"></property>
+     <property property="orgname" column="orgname"></property>
+     <property property="orgno" column="orgno"></property>
+     <property property="orgcode" column="orgcode"></property>
+     <property property="yearly" column="yearly"></property>
+     <property property="prefund" column="prefund"></property>
+     <property property="businessfund" column="businessfund"></property>
+     <property property="dutyfund" column="dutyfund"></property>
+     <property property="buildfund" column="buildfund"></property>
+  </map>
+  <select id="findfinal">
+   select * from T_D0_fund where id=?
+  </select>
+  <select id="selectTD0fundbyorg"><!-- 在登录时，对数据库中的用户进行查询 -->
+    select * from T_D0_fund where orgid=?
+  </select>
+  <select id="selectTD0fundbyyear">
+    select * from T_D0_fund where yearly=?
+  </select>
+  <select id="selectallfund">
+    select * from T_D0_fund 
+  </select>
+  <insert id="insertfund">
+    insert into T_D0_fund (id,yearly,prefund,dutyfund,businessfund,buildfund,orgid) values (?,?,?,?,?,?,?)
+  </insert>
+  <update id="updatefund">
+   update T_D0_fund set yearly=?,prefund=?,dutyfund=?,businessfund=?,buildfund=? where id=?
+  </update>
+  <delete id="deletefund">
+   delete from T_D0_fund where id=?
+  </delete>
+ </mapping>

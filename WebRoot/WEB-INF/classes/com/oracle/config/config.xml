@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+   <dataSource>
+      <property name="driverName">oracle.jdbc.driver.OracleDriver</property>
+      <property name="url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+      <property name="username">JiangSuProject</property>
+      <property name="password">123</property>
+      <property name="size">2</property>
+      <property name="show_sql">true</property>
+   </dataSource>
+
+</beans>
